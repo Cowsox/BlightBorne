@@ -14,11 +14,11 @@ init:
         "campfire.jpg"
         zoom 1.5
     image necro:
-        "necromancer.jpeg"
-        zoom 0.5
+        "necromancer.png"
+        zoom 0.2
     image palad:
-        "paladin.jpeg"
-        zoom 0.5
+        "paladin.png"
+        zoom 0.2
 
     transform fade:
         on show:

@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 39, in script
+    jump senario_2
+ScriptError: could not find label 'senario_2'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 39, in script
+    jump senario_2
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'senario_2'.
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.3.7.25031702
+Demo 1.0
+Sat May  3 16:54:13 2025

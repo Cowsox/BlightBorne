@@ -1,6 +1,13 @@
 ﻿# Characters
-define nec = Character("Necromancer")
-define pal = Character("Paladin")
+define nec = Character("Necromancer", who_color="#663399", what_color="#d8bfd8")
+define pal = Character("Paladin", who_color="#daa520", what_color="#eee8aa")
+
+define paladin = "{color=#daa520}Paladin{/color}"
+define necromancer = "{color=#663399}Necromancer{/color}"
+define champion = "{color=#b0e0e6}Champion{/color}"
+
+define config.default_textshader = "zoom:0.2|typewriter|slowalpha:0"
+#define config.default_textshader = "jitter:3,3"
 
 # Resources
 default infection = 0
@@ -11,8 +18,9 @@ default companions = 0
 # Initialise image settings
 init:
     image campfire:
-        "campfire.jpg"
-        zoom 1.5
+        "camp.png"
+        yalign 0.0
+        zoom 0.6
     image necro:
         "necromancer.png"
         zoom 0.2
@@ -39,6 +47,25 @@ init:
         matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
         alpha 1.0
 
+# slight pause on specific punctuation
+init python:
+    def slow_punctuation(str_to_test):
+        return (str_to_test
+            .replace(", ", ",{w=0.05} ")
+            .replace(". ", ".{w=0.15} ")
+            .replace("! ", "!{w=0.15} ")
+            .replace("? ", "?{w=0.15} ")
+            .replace(": ", ":{w=0.15} ")
+            .replace("— ", "—{w=0.15} ")
+            .replace(" —", " —{w=0.15}")
+            .replace("... ", "...{w=0.3} ")
+            .replace("Dr.{w=0.15} ", "Dr. ")
+            .replace("Mx.{w=0.15} ", "Mx. ")
+            .replace("Ms.{w=0.15} ", "Ms. ")
+            .replace("Mr.{w=0.15} ", "Mr. ")
+            .replace("St.{w=0.15} ", "St. "))
+    config.say_menu_text_filter = slow_punctuation
+
 # Required start point
 label start:
     jump camp_main
@@ -63,7 +90,7 @@ label camp_main:
 label camp_move:
     menu:
         "It is dangerous to stay in one place too long, where should we go?"
-        "Abandoned Lab":
+        "Farmstead (Corpse Flower)":
             jump corpse_flower_1
         "Ruined Buildings":
             jump senario_2
@@ -106,17 +133,17 @@ label nec_talk:
 
 label corpse_flower_1:
     scene lab
-    "*Whilst venturing within the forest, you come upon a ruinedfarmstead."
+    "*Whilst venturing within the forest, you come upon a ruined farmstead."
     
     show palad at fade, left
-    pal "Halt. That stench. I've smelt it before..."
+    pal "{b}Halt.{/b} That... {shader=jitter:3,3}{color=#66b032}stench{/color}{/shader}.{p}I've smelt it before..."
 
     show necro at fade, right
     nec "I sense something too. Those ruins up ahead. I advise we investigate."
 
     pal "Agreed. There could be survivors."
 
-    nec "-Or something else we could use to our advantage."
+    nec "{size=-10}-Or something else we could use to our {i}advantage{/i}.{/size}"
 
     menu:
         "*A decision must be made."
@@ -126,13 +153,13 @@ label corpse_flower_1:
             jump camp_setup
 
 label corpse_flower_2b:
-    scene lab
-    "*Upon entering the room, a foul stench fills your nostrils.A trail of blood leads to a corner."
+    scene corps flower
+    "*Upon entering the room, a foul {shader=jitter:3,3}{color=#66b032}stench{/color}{/shader} fills your nostrils. A trail of {color=#8b0000}blood{/color} leads to a corner."
     "*It is there a corpse of a man has been mangled and mutilated by a thick growth of glutinous vines."
-    "*At the centre of the corpse emerges someform of twisted flora."
-    "*It's veiny petals glow with thick pustules of blight."
+    "*At the centre of the corpse emerges some form of twisted flora."
+    "*It's veiny petals glow with thick pustules of {color=#ffa500}blight{/color}."
 
-    "*Upon a closer look, the plant is swaying as if it were breathing..."
+    "*Upon a closer look, the plant is swaying as if it were {shader=wave:1}breathing...{/shader}"
     "*Perhaps the corpse beneath was."
 
     show palad at fade, left
@@ -140,24 +167,24 @@ label corpse_flower_2b:
 
     show necro at fade, right
     nec "I've never seen anything such as this before."
-    nec "It seems humans are not the only thing this blight corrupts."
+    nec "It seems humans are not the only thing this {color=#ffa500}blight{/color} corrupts."
     nec "Fascinating..."
 
     pal "This poor man..."
     pal "We must allow his soul to travel with the respect it deserves."
-    pal "I shall recite the litanies, then burn this abhorrence to ash."
+    pal "I shall recite the litanies, then burn this {shader=jitter:3,3}abhorrence{/shader} to ash."
 
-    nec "You will do no such thing, Paladin."
+    nec "You will do no such thing, [paladin]."
     nec "This specimen is more useful to us intact."
 
-    pal "Useful? Intact?"
-    pal "I know you are one to dabble in sin, but this is excessive, even to your standards!"
+    pal "{shader=jitter:3,3}Useful? Intact?{/shader}"
+    pal "I know you are one to dabble in {shader=jitter:3,3}sin{/shader}, but this is excessive, even to your standards!"
 
-    nec "Champion, if I can conduct research on this corpse flower, we could better understand what we're fighting against."
+    nec "[champion], if I can conduct research on this corpse flower, we could better understand what we're fighting against."
     nec "Maybe even a way to use it to our advantage."
 
-    pal "You cannot be considering this, Champion."
-    pal "We must destroy this vile bloom before it spreads."
+    pal "You {b}cannot{/b} be considering this, [champion]."
+    pal "We must destroy this {shader=jitter:3,3}vile bloom{/shader} before it spreads."
 
     menu:
         "*A decision must be made."
@@ -176,15 +203,15 @@ label corpse_flower_3a:
     show palad at fade, left
     pal "Hmph. Make haste, witch. We've been here long enough."
 
-    "*The Paladin stands aside, humming a prayer for the fallenfarmer."
-    "*The Necromancer approaches the Corpse Flower, gentlycutting off part of a petal, and placing it within a mortarand pestle."
-    "*With the now powdered petal, she pours it intofour vials, each with a different colour of liquid."
-    "*The liquids begin to bubble slightly, with the Necromancer writing some notes down in her grimoire."
+    "*The [paladin] stands aside, humming a prayer for the fallen farmer."
+    "*The [necromancer] approaches the Corpse Flower, gently cutting off part of a petal, and placing it within a mortar and pestle."
+    "*With the now powdered petal, she pours it into four vials, each with a different colour of liquid."
+    "*The liquids begin to {shader=jitter:3,3}bubble{/shader} slightly, with the [necromancer] writing some notes down in her grimoire."
 
-    nec "Interesting reaction... This discovery shall serve us well, Champion. (+1 Research Points)"
+    nec "Interesting reaction... This discovery shall serve us well, [champion]. (+1 Research Points)"
 
     pal "We cannot afford to be doing these wild experiments on everything we discover."
-    pal "Do not push your luck, Champion."
+    pal "Do not push your luck, [champion]."
     jump camp_setup
 
 label corpse_flower_3b:
@@ -196,20 +223,20 @@ label corpse_flower_3b:
     pal "This is not courageous, this is recklessness."
     pal "Such recklessness I will have no part in."
 
-    "*The Paladin leaves the room."
-    "*The Necromancer holds out a hand. Necrotic energy beginspulsing towards the Corpse Flower."
+    "*The [paladin] leaves the room."
+    "*The [necromancer] holds out a hand. Necrotic energy beginspulsing towards the Corpse Flower."
 
     nec "Interesting reaction..."
 
-    "*The Corpse Flower begins to glow even brighter as it startsgrowing into a horrible bloated state. Pustles begin to popone by one."
+    "*The Corpse Flower begins to glow even brighter as it startsgrowing into a horrible bloated state. Pustles begin to pop one by one."
     "*Then they start popping in clusters."
 
     nec "Almost... got it..."
 
-    "*Suddenly, the entire growth explodes. Blood, guts and bilecoat the room and your party."
+    "*Suddenly, the entire growth explodes. {color=#8b0000}Blood{/color}, guts and bilecoat the room and your party."
 
-    nec "Such volatile power. It is ours now."
-    nec "Apologies for the mess, Champion. But it was worth the discomfort I assure you. (+1 Blight Seed)"
+    nec "Such {shader=jitter:3,3}volatile{/shader} power. It is {i}ours{/i} now."
+    nec "Apologies for the mess, [champion]. But it was worth the discomfort I assure you. (+1 Blight Seed)"
     jump camp_setup
 
 label corpse_flower_3c:
@@ -220,62 +247,17 @@ label corpse_flower_3c:
     show necro at fade, right
     nec "Pity. We could've gained so much..."
 
-    "*The paladin draws his blade, it begins to glow a warm yellow hue."
+    "*The [paladin] draws his blade, it begins to glow a warm yellow hue."
 
-    pal "By order of the crown and the power entrusted to me by the sacred oath, I smite this unholy abomination to ash!"
+    pal "By order of the crown and the power entrusted to me by the sacred oath, I smite this unholy {shader=jitter:3,3}abomination{/shader} to ash!"
 
-    "*The paladin crashes his blade down into the Corpse Flower."
+    "*The [paladin] crashes his blade down into the Corpse Flower."
     "*A flash of light blinds the room."
-    "*The unholy energy clashingwith the holy aura causes a violent eruption. A shock waveknocks the party to their feet."
-    "*Once the light fades, a largehole in the wall remains where the Corpse Flower once was.(-5 health)"
+    "*The unholy energy clashing with the holy aura causes a violent eruption. A shock wave knocks the party to their feet."
+    "*Once the light fades, a large hole in the wall remains where the Corpse Flower once was.(-5 health)"
 
-    nec "W-what was that!?"
+    nec "{shader=jitter:3,3}W-what was that!?{/shader}"
 
-    pal "Divine judgment."
+    pal "{b}Divine judgment.{/b}"
     pal "Our wounds will heal, just as this land now will."
-    jump camp_setup
-
-# Corpse Flower
-label senario_1:
-    # Scene
-    scene lab
-    "The flower smells of death."
-
-    # Characters
-    show necro at fade, left
-    nec "Use It!"
-    show necro at darken, grayscale
-
-    show palad at fade, right
-    pal "No, Destroy It!"
-    show palad at darken, grayscale
-
-    # Choice
-    menu:
-        "A decision must be made."
-        "Use It.":
-            jump A
-        "Destroy It.":
-            jump B
-
-label A:
-    show necro at center:
-        alpha 1.0
-        xalign 0.0
-        ease 1.0 xalign 0.5
-    "The necromaner is delighted."
-    jump senario_1_end
-
-label B:
-    show palad at center:
-        alpha 1.0
-        xalign 1.0
-        ease 1.0 xalign 0.5
-    "The paladin grins at the burning remains."
-    jump senario_1_end
-
-label senario_1_end:
-    hide palad
-    hide necro
-    "Despite the outcome, this threat has been dealt with. We should move on."
     jump camp_setup

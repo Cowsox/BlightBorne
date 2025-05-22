@@ -1,14 +1,46 @@
-renpy.dissolve renpy.geometry
-renpy.matrixcolor renpy.texture
-renpy.dissolve renpy.dissolve
-renpy.geometry renpy.texture
 renpy.alpha renpy.geometry renpy.matrixcolor renpy.texture
-renpy.geometry renpy.solid
-renpy.solid
-renpy.alpha renpy.texture
-renpy.matrixcolor renpy.alpha renpy.texture
-renpy.texture
-renpy.matrixcolor renpy.alpha renpy.matrixcolor renpy.texture
+renpy.geometry renpy.texture textshader.dissolve
+renpy.geometry renpy.texture textshader.flip
+renpy.dissolve renpy.geometry
+renpy.texture textshader.wave renpy.texture textshader.wave
 renpy.ftl
+renpy.texture textshader.zoom renpy.texture textshader.zoom
+renpy.alpha renpy.geometry renpy.texture textshader.slowalpha textshader.typewriter textshader.zoom
+renpy.matrixcolor renpy.texture
 renpy.alpha renpy.geometry renpy.texture
+renpy.texture textshader.zoom textshader.jitter renpy.texture textshader.zoom textshader.jitter
+renpy.texture textshader.zoom textshader.slowalpha renpy.texture textshader.zoom textshader.slowalpha
+renpy.texture textshader.zoom textshader.typewriter renpy.texture textshader.zoom textshader.typewriter
+renpy.geometry renpy.texture textshader.typewriter
+renpy.matrixcolor renpy.alpha renpy.matrixcolor renpy.texture
+renpy.geometry renpy.texture textshader.offset
+renpy.geometry renpy.solid
+renpy.texture textshader.typewriter textshader.jitter renpy.texture textshader.typewriter textshader.jitter
+renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha textshader.jitter renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha textshader.jitter
+renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha textshader.wave renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha textshader.wave
+renpy.texture
+renpy.geometry renpy.texture textshader.jitter
+renpy.geometry renpy.texture textshader.slowalpha textshader.typewriter textshader.wave textshader.zoom
+renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha
+renpy.texture textshader.dissolve renpy.texture textshader.dissolve
+renpy.geometry renpy.texture textshader.flip textshader.slowalpha textshader.typewriter textshader.zoom
+renpy.geometry renpy.texture textshader.jitter textshader.slowalpha textshader.typewriter textshader.zoom
+renpy.geometry renpy.texture textshader.jitter textshader.zoom
+renpy.geometry renpy.texture textshader.wave
+renpy.geometry renpy.texture textshader.slowalpha textshader.typewriter textshader.zoom
+renpy.geometry renpy.texture textshader.slowalpha textshader.zoom
+renpy.geometry renpy.texture textshader.typewriter textshader.zoom
+renpy.dissolve renpy.dissolve
 renpy.geometry renpy.matrixcolor renpy.texture
+renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha textshader.flip renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha textshader.flip
+renpy.solid
+renpy.texture textshader.typewriter renpy.texture textshader.typewriter
+renpy.texture textshader.flip renpy.texture textshader.flip
+renpy.texture textshader.jitter renpy.texture textshader.jitter
+renpy.alpha renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha renpy.texture textshader.zoom textshader.typewriter textshader.slowalpha
+renpy.alpha renpy.texture
+renpy.geometry renpy.texture
+renpy.geometry renpy.texture textshader.zoom
+renpy.geometry renpy.texture textshader.jitter textshader.typewriter
+renpy.texture textshader.offset renpy.texture textshader.offset
+renpy.matrixcolor renpy.alpha renpy.texture

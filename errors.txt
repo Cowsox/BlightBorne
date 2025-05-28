@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 15: invalid syntax
-    def speaker_callback(name, event **kwargs):
-                                      ^
+File "game/script.rpy", line 14: expected '=' not found.
+    define blood "{color=#8b0000}blood{/color}"
+                 ^
+
+File "game/script.rpy", line 15: expected '=' not found.
+    define blight "{color=#ffa500}blight{/color}"
+                  ^
+
+File "game/script.rpy", line 16: expected '=' not found.
+    define corpse ""
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May 23 14:01:57 2025
+Wed May 28 13:56:51 2025

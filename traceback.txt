@@ -1,22 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 356, in script
-    jump town_3
-ScriptError: could not find label 'town_3'.
+  File "game/script.rpy", line 237, in script
+    show necro reach
+Exception: Image 'necro' does not accept attributes 'reach'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 356, in script
-    jump town_3
-  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1712, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'town_3'.
+  File "game/script.rpy", line 237, in script
+    show necro reach
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
+    renpy.config.show(name,
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\transform.py", line 1188, in _duplicate
+    args.extraneous()
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'necro' does not accept attributes 'reach'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Demo 1.0
-Fri May 23 15:56:09 2025
+Wed May 28 13:31:02 2025

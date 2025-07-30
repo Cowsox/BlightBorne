@@ -26,7 +26,7 @@ define config.default_textshader = "zoom:0.2|typewriter|slowalpha:0"
 default infection = 0
 default research = 0
 
-default companions = 0
+default companions = 2
 
 # Initialise image settings
 init:
@@ -173,11 +173,11 @@ label camp_companions:
 
 # Talk to necromancer
 label nec_talk:
-    show Necromancer
+    show necro
     with dissolve
     "A quiet fellow."
     menu:
-        "While he does not aknowledge your approach, experience tells you that he'll talk."
+        "While he does not acknowledge your approach, experience tells you that he'll talk."
         "About him":
             jump nec_talk
         "About journey":
@@ -185,7 +185,7 @@ label nec_talk:
         "About companions":
             jump nec_talk
         "Nevermind.":
-            hide necromancer
+            hide necro
             jump camp_main
 
 label corpse_flower_1:

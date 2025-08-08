@@ -1,4 +1,36 @@
-﻿# Characters
+﻿# Particles
+image dust1:
+    "particles/9.png"
+    alpha renpy.random.uniform(1, 0.1)
+    zoom .1
+image dust2:
+    "particles/9.png"
+    alpha renpy.random.uniform(1, 0.1)
+    zoom .05
+image fog1:
+    "particles/50.png"
+    anchor (0.5, 0.5)
+    zoom 1
+transform spin:
+    zoom 1
+    linear renpy.random.uniform(0.1, 1) zoom .1
+    repeat
+transform colorizeBlight:
+    matrixcolor TintMatrix("#b86800")
+    linear renpy.random.uniform(0.1, 1) matrixcolor TintMatrix("#e6aa5c")
+    linear 1 matrixcolor TintMatrix("#b86800")
+    repeat
+image snow1 = SnowBlossom("dust1", count=50, border=20, xspeed=(-10, 10), yspeed=(10, 100), start=50, fast=False)
+image snow2 = SnowBlossom("dust2", count=50, border=20, xspeed=(-10, 10), yspeed=(10, 100), start=50, fast=False)
+image snow3 = SnowBlossom(At("fog1", spin), count=100, border=-100, xspeed=0, yspeed=0, start=50)
+
+image test fixed = Fixed(
+    SnowBlossom("fog1", count=100, fast=True)
+)
+
+define config.top_layers = [ 'toplayer' ]
+
+# Characters
 define nec = Character("Necromancer", who_color="#663399", what_color="#d8bfd8")
 define pal = Character("Paladin", who_color="#daa520", what_color="#eee8aa")
 define mom = Character("Mother", who_color="#6495ed", what_color="#87ceeb")
@@ -15,6 +47,7 @@ define daughter = "{color=#db7093}daughter{/color}"
 define child = "{color=#db7093}child{/color}"
 
 # key word colours
+# capital words for start of sentence
 define blood = "{color=#8b0000}blood{/color}"
 define Blood = "{color=#8b0000}Blood{/color}"
 define blight = "{color=#ffa500}blight{/color}"
@@ -123,8 +156,21 @@ init python:
             .replace("St.{w=0.15} ", "St. "))
     config.say_menu_text_filter = slow_punctuation
 
+init python:
+    # Custom text tag
+    config.self_closing_custom_text_tags["sno"] = "{image=particles/9.png}"
+
+label particle_demo:
+    show snow1 at colorizeBlight
+    show snow2
+    show snow3
+    "..."
+
 # Required start point
 label start:
+    #show snow1 onlayer toplayer
+    #show snow2 onlayer toplayer
+    jump particle_demo
     jump camp_main
 
 # Camp introduction
@@ -136,6 +182,8 @@ label camp_setup:
 # Main camp actions
 label camp_main:
     scene campfire
+    show snow1 at colorizeBlight
+    show snow2 at colorizeBlight
     menu:
         "The camp is quiet."
         "Move camp":

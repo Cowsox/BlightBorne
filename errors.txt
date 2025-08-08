@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 14: expected '=' not found.
-    define blood "{color=#8b0000}blood{/color}"
-                 ^
-
-File "game/script.rpy", line 15: expected '=' not found.
-    define blight "{color=#ffa500}blight{/color}"
-                  ^
-
-File "game/script.rpy", line 16: expected '=' not found.
-    define corpse ""
-                  ^
+File "game/script.rpy", line 32: 'Fixed' is not a keyword argument or valid child of the screen statement.
+    Fixed:
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed May 28 13:56:51 2025
+Mon Aug  4 17:50:54 2025

@@ -1,135 +1,245 @@
-2025-08-07 08:09:56 UTC
+2025-08-08 06:52:26 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
-Early init took 0.20s
-Loading error handling took 0.25s
-Loading script took 3.62s
-Loading save slot metadata took 0.44s
+Early init took 0.07s
+Loading error handling took 0.03s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
- - Init at game/gui.rpy:11 took 0.27733 s.
-Running init code took 0.74s
-Loading analysis data took 0.05s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.33s
+Running init code took 0.05s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Dump and make backups took 0.12s
+Backing up script files to 'C:\\Users\\user\\AppData\\Roaming/RenPy/backups\\BlightBorne':
+Dump and make backups took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.06s
-DPI scale factor: 1.250000
+Initial gc took 0.03s
+DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.08s
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.32s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.07s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.52s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 572.47'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1879, 1057) drawable=(1879, 1057)
+Maximum texture size: 4096x4096
+controller: '030000005e0400008e02000000007200' 'Xbox 360 Controller' 1
+
+Full traceback:
+  File "game/script.rpy", line 122, in script
+    "{hollowglow}Hollow Glow{/hollowgrlow}"
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 814, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\core.py", line 2882, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\core.py", line 1384, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\screen.py", line 755, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\layout.py", line 1457, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2627, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 739, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 1285, in segment
+    raise Exception("%r closes a text tag that isn't open." % text)
+Exception: '/shader' closes a text tag that isn't open.
+
+While processing text tag {/shader} in '{hollowglow}Hollow Glow{/hollowgrlow}'.:
+  File "game/script.rpy", line 122, in script
+    "{hollowglow}Hollow Glow{/hollowgrlow}"
+Exception: '/shader' closes a text tag that isn't open.
+Resetting cache.
+Early init took 34.85s
+Loading error handling took 0.03s
+Loading script took 0.14s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\user\\AppData\\Roaming/RenPy/backups\\BlightBorne':
+Dump and make backups took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.30s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.47s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 572.47'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1879, 1057) drawable=(1879, 1057)
+Maximum texture size: 4096x4096
+controller: '030000005e0400008e02000000007200' 'Xbox 360 Controller' 1
+
+Full traceback:
+  File "game/script.rpy", line 130, in script
+    "{gradient}Gradient{gradient}"
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 796, in display_say
+    what_text.update()
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2321, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2941, in apply_custom_tags
+    for kind2, text2 in new_contents:
+TypeError: 'NoneType' object is not iterable
+
+While running game code:
+  File "game/script.rpy", line 130, in script
+    "{gradient}Gradient{gradient}"
+TypeError: 'NoneType' object is not iterable
+Resetting cache.
+Early init took 75.18s
+Loading error handling took 0.02s
+Loading script took 0.10s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Dump and make backups took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.29s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.13s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.05s
+Save bytecode. took 0.00s
 Running _start took 0.00s
-Interface start took 1.42s
+Interface start took 0.48s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) HD Graphics 520'
-Version: b'4.6.0 - Build 31.0.101.2121'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 572.47'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1858, 1045) drawable=(1858, 1045)
+Screen sizes: virtual=(1920, 1080) physical=(1879, 1057) drawable=(1879, 1057)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(958, 1041) drawable=(958, 1041)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 958.11s
-Loading error handling took 0.05s
-Loading script took 0.41s
-Loading save slot metadata took 0.07s
-Loading persistent took 0.00s
-Running init code took 0.10s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.06s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\admin\\AppData\\Roaming/RenPy/backups\\BlightBorne':
-Dump and make backups took 0.13s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.250000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.05s
-Prepare screens took 0.16s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 1.17s
+controller: '030000005e0400008e02000000007200' 'Xbox 360 Controller' 1
 
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) HD Graphics 520'
-Version: b'4.6.0 - Build 31.0.101.2121'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(958, 539) drawable=(958, 539)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1051) drawable=(1920, 1051)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 69288.75s
-Loading error handling took 0.11s
-Loading script took 0.97s
-Loading save slot metadata took 0.10s
-Loading persistent took 0.00s
-Running init code took 0.15s
-Loading analysis data took 0.06s
-Analyze and compile ATL took 0.02s
-Reloading save slot metadata took 0.09s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\admin\\AppData\\Roaming/RenPy/backups\\BlightBorne':
-Dump and make backups took 0.27s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.16s
-DPI scale factor: 1.250000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.06s
-Save screen analysis took 0.07s
-Prepare screens took 0.35s
-Save pyanalysis. took 0.08s
-Save bytecode. took 0.07s
-Running _start took 0.03s
-Interface start took 1.93s
+Full traceback:
+  File "game/script.rpy", line 130, in script
+    "{gradient}Gradient{gradient}"
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 796, in display_say
+    what_text.update()
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2321, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2941, in apply_custom_tags
+    for kind2, text2 in new_contents:
+TypeError: 'NoneType' object is not iterable
 
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) HD Graphics 520'
-Version: b'4.6.0 - Build 31.0.101.2121'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1051) drawable=(1920, 1051)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1051) drawable=(1920, 1051)
-Maximum texture size: 4096x4096
+While running game code:
+  File "game/script.rpy", line 130, in script
+    "{gradient}Gradient{gradient}"
+TypeError: 'NoneType' object is not iterable

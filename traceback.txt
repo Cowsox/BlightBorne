@@ -1,32 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 165, in script
-    show screen set_pos
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-Exception: Screen set_pos is not known.
-
+  File "game/script.rpy", line 130, in script
+    "{gradient}Gradient{gradient}"
+TypeError: 'NoneType' object is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 165, in script
-    show screen set_pos
-  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\display\screen.py", line 1328, in show_screen
-    raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen set_pos is not known.
-
+  File "game/script.rpy", line 130, in script
+    "{gradient}Gradient{gradient}"
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 796, in display_say
+    what_text.update()
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2321, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2941, in apply_custom_tags
+    for kind2, text2 in new_contents:
+TypeError: 'NoneType' object is not iterable
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Demo 1.0
-Mon Aug  4 17:52:05 2025
+Fri Aug  8 16:53:43 2025

@@ -111,7 +111,7 @@ init:
 label particle_demo:
     show dust_rise_1 at colorizeBlight
     show dust_rise_2
-    "text {a=jump:camp_main}hover{/a} text"
+    "text {a=jump:camp_main}camp{/a} {a=jump:combat_start}combat{/a}"
     "a blight game"
     "{ghostwrite}Ghostwrite{/ghostwrite}"
     "{burningforbigtext}Burning For Big Text{/burningforbigtext}"

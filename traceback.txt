@@ -1,34 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 130, in script
-    "{gradient}Gradient{gradient}"
-TypeError: 'NoneType' object is not iterable
+  File "game/scripts/code/combat.rpy", line 75, in script call
+    call turn
+  File "game/scripts/code/combat.rpy", line 87, in script call
+    call combat_menu
+  File "game/scripts/code/combat.rpy", line 131, in script
+    $ e = defense(current_fighter, 2)
+  File "game/scripts/code/combat.rpy", line 131, in <module>
+    $ e = defense(current_fighter, 2)
+NameError: name 'defense' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 130, in script
-    "{gradient}Gradient{gradient}"
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\character.py", line 796, in display_say
-    what_text.update()
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2321, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\text\text.py", line 2941, in apply_custom_tags
-    for kind2, text2 in new_contents:
-TypeError: 'NoneType' object is not iterable
+  File "game/scripts/code/combat.rpy", line 75, in script call
+    call turn
+  File "game/scripts/code/combat.rpy", line 87, in script call
+    call combat_menu
+  File "game/scripts/code/combat.rpy", line 131, in script
+    $ e = defense(current_fighter, 2)
+  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/code/combat.rpy", line 131, in <module>
+    $ e = defense(current_fighter, 2)
+NameError: name 'defense' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Demo 1.0
-Fri Aug  8 16:53:43 2025
+Mon Aug 25 16:27:10 2025

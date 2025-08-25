@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/code/particles.rpy", line 29: invalid syntax
-    SnowBlossom(At("dust1", shrink) count=50, border=20, xspeed=(-10, 10), yspeed=(-10, -100), start=50, fast=False)
-                                     ^
+File "game/scripts/code/combat.rpy", line 94: 'var' is not a keyword argument or valid child of the for statement.
+    var = item.name
+       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Aug  8 16:32:48 2025
+Mon Aug 25 17:40:05 2025

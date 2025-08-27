@@ -33,6 +33,7 @@ default companions = 2
 
 # Initialise image settings
 init:
+    # Backgrounds
     image campfire:
         "camp.png"
         yalign 0.0
@@ -56,21 +57,25 @@ init:
         "heart hand.png"
         yalign 0.3
         zoom 0.5
+    # Close Ups
     image bear:
         "sick girl.png"
         zoom 0.6
     image arm:
         "mother/infected arm.png"
         zoom 0.5
+    # Necromancer
     image necro:
-        "necromancer.png"
+        "images/Necromancer/Nec_Pose1.png"
         zoom 0.2
-    image necro reach:
-        "necromancer reach.png"
+    image necro_battle:
+        "images/Necromancer/Nec_Pose2.png"
         zoom 0.2
+    # Paladin
     image palad:
-        "paladin.png"
+        "images/Paladin/Pal_Pose1.png"
         zoom 0.2
+    # Mother
     image mothe:
         "mother/mother mouth closed.png"
         offset (-200, 100)
@@ -79,6 +84,7 @@ init:
         "mother/mother crying.png"
         offset (-200, 100)
         zoom 0.4
+    # Daughter
     image daugh:
         "child/child mouth closed.png"
         offset (-100, 200)

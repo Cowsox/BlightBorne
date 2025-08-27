@@ -1,27 +1,28 @@
 init python:
     # fighter class definition
     class fighter:
-        def __init__(self, name, hp, max_hp, atk, defe, my_type, can_heal, controllable):
+        def __init__(self, name, image, hp, max_hp, atk, defe, my_type, can_heal, controllable):
             self.name = name
+            self.image = image
             self.hp = hp
             self.max_hp = max_hp
             self.atk = atk
             self.defe = defe
-            self.max_defe = max_defe
+            self.max_defe = 6 # CHANGE LATER
             self.my_type = my_type
             self.can_heal = can_heal
-            self.can_block = can_block
+            self.can_block = True # CHANGE LATER
             self.controllable = controllable
 
     # fighters implemented
-    p1 = fighter("Champion", 10, 10, 2, 0, 0, False, True)
-    p2 = fighter("Necromancer", 15, 15, 2, 0, 0, True, True)
-    p3 = fighter("Paladin", 10, 10, 2, 0, 0, False, True)
-    p4 = fighter("Oathbreaker", 10, 10, 2, 0, 0, False, True)
-    e1 = fighter("Plague Body", 10, 10, 2, 0, 0, False, False)
-    e2 = fighter("Bandit", 10, 10, 2, 0, 0, False, False)
-    e3 = fighter("Plague Knight", 10, 10, 2, 0, 0, False, False)
-    e4 = fighter("Oathbreaker", 10, 10, 2, 0, 0, False, False)
+    p1 = fighter("Champion",        "sick girl.png", 10, 10, 2, 0, 0, False, True)
+    p2 = fighter("Necromancer",     "sick girl.png", 15, 15, 2, 0, 0, True, True)
+    p3 = fighter("Paladin",         "sick girl.png", 10, 10, 2, 0, 0, False, True)
+    p4 = fighter("Oathbreaker",     "sick girl.png", 10, 10, 2, 0, 0, False, True)
+    e1 = fighter("Plague Body",     "sick girl.png", 10, 10, 2, 0, 0, False, False)
+    e2 = fighter("Bandit",          "sick girl.png", 10, 10, 2, 0, 0, False, False)
+    e3 = fighter("Plague Knight",   "sick girl.png", 10, 10, 2, 0, 0, False, False)
+    e4 = fighter("Oathbreaker",     "sick girl.png", 10, 10, 2, 0, 0, False, False)
 
     turn_order = [p1, p2, p3]
     turn_num = 0
@@ -55,40 +56,53 @@ init python:
     #def defence_debuff
 
 # GUI screen
-screen hp_bars_1v1:
-    vbox:
-        spacing 20
-        xalign 0.1
-        yalign 0.1
-        xmaximum 600
-        text "[p1.name]"
-        bar value StaticValue(p1.hp, p1.max_hp):
-            left_bar "images/bars/full.png"
-            right_bar "images/bars/empty.png"
-        text "Health: [p1.hp]/[p1.max_hp]" size 20
-        text "Defence: [p1.defe]" size 20
-    vbox:
-        spacing 20
-        xalign 0.1
-        yalign 0.4
-        xmaximum 600
-        text "[p2.name]"
-        bar value StaticValue(p2.hp, p2.max_hp):
-            left_bar "images/bars/full.png"
-            right_bar "images/bars/empty.png"
-        text "Health: [p2.hp]/[p2.max_hp]" size 20
-        text "Defence: [p2.defe]" size 20
-    vbox:
-        spacing 20
-        xalign 0.9
-        yalign 0.1
-        xmaximum 600
-        text "[p3.name]"
-        bar value StaticValue(p3.hp, p3.max_hp):
-            left_bar "images/bars/full.png"
-            right_bar "images/bars/empty.png"
-        text "Health: [p3.hp]/[p3.max_hp]" size 20
-        text "Defence: [p3.defe]" size 20
+transform rot90:
+    rotate 270
+    rotate_pad False
+
+transform red:
+    matrixcolor TintMatrix("#b80000")
+
+transform blue:
+    matrixcolor TintMatrix("#00b899")
+
+screen hp_bar(pos):
+    for char in turn_order:
+        $ pos += 0.1
+        frame:
+            xalign pos
+            vbox:
+                spacing 10
+                xmaximum 200
+                xminimum 200
+                hbox:
+                    spacing 10
+                    xalign 0.5
+                    image "images/icons/heart-organ.png" zoom 0.07 at red
+                    text "[char.hp]/[char.max_hp]":
+                        xalign 0.5
+                hbox:
+                    spacing 5
+                    xalign 0.5
+                    ymaximum 500
+                    text "[char.name]" at rot90:
+                        yalign 0.9
+                        size 40
+                    vbar value StaticValue(char.hp, char.max_hp) at red:
+                        xsize 30
+                        bottom_bar "images/bars/bottom.png"
+                        top_bar "images/bars/top.png"
+                    vbar value StaticValue(char.defe, char.max_defe) at blue:
+                        xsize 10
+                        bottom_bar "images/bars/bottom.png"
+                        top_bar "images/bars/top.png"
+                hbox:
+                    spacing 10
+                    xalign 0.5
+                    image "images/icons/shield.png" zoom 0.07 at blue
+                    text "[char.defe]/[char.max_defe]":
+                        xalign 0.5
+                        tooltip "Defence"
 
 screen targeting:
     vbox:
@@ -98,9 +112,8 @@ screen targeting:
             textbutton "[var]" action Return(item)
 
 label combat_start:
-    
     # setup GUI and Background
-    show screen hp_bars_1v1
+    show screen hp_bar(0.0)
     show image "images/backgrounds/simple background.jpg":
         zoom 1
     jump turn
@@ -127,12 +140,17 @@ label turn_cycle:
 
 # Generalised turn menu
 label combat_menu:
+    show necro_battle at grayscale:
+        xalign 0.0
+        yalign 1.0
     "It is the [current_fighter.name]'s turn."
     menu:
         "Attack":
             call screen targeting
             $ target = _return
             $ e = attack(current_fighter, target)
+            show necro_battle with hpunch:
+                easein_elastic 1 xpos 0.2
             "The [current_fighter.name] attacks and delt [e] damage! [target.name] has [target.hp] hp left!"
         "Heal Party" if current_fighter.can_heal:
             $ heal(current_fighter, 3)

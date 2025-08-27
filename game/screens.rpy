@@ -73,7 +73,7 @@ style vslider:
 
 style frame:
     padding gui.frame_borders.padding
-    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    #background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 
 

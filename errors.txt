@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/code/combat.rpy", line 143: end of line expected.
-    show p1.image
-           ^
+File "game/scripts/code/combat.rpy", line 4: invalid syntax
+            self.order = order[]
+                                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Aug 27 18:26:57 2025
+Mon Sep  8 16:24:45 2025

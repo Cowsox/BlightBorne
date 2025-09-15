@@ -1,4 +1,11 @@
 init python:
+    class fight:
+        def __init__(self, order):
+            self.order = order
+    
+    def add_fighter(fighter, fight):
+        fight.order.append(fighter)
+
     # fighter class definition
     class fighter:
         def __init__(self, name, image, hp, max_hp, atk, defe, my_type, can_heal, controllable):
@@ -24,7 +31,7 @@ init python:
     e3 = fighter("Plague Knight",   "sick girl.png", 10, 10, 2, 0, 0, False, False)
     e4 = fighter("Oathbreaker",     "sick girl.png", 10, 10, 2, 0, 0, False, False)
 
-    turn_order = [p1, p2, p3]
+    turn_order = [p1, p2, p3, e1, e2]
     turn_num = 0
     current_fighter = p1
 
@@ -55,6 +62,8 @@ init python:
     #def attack_buff
     #def defence_debuff
 
+    demo_fight = fight([])
+
 # GUI screen
 transform rot90:
     rotate 270
@@ -67,10 +76,21 @@ transform blue:
     matrixcolor TintMatrix("#00b899")
 
 screen hp_bar(pos):
+    # Loop per character in battle
+    $ ally_pos = 0.0
+    $ enem_pos = 1.0
     for char in turn_order:
-        $ pos += 0.1
+        if char.controllable == True:
+            $ ally_pos += 0.1
+        else:
+            $ enem_pos -= 0.1
+    
+        # Main UI
         frame:
-            xalign pos
+            if char.controllable == True:
+                xalign ally_pos
+            else:
+                xalign enem_pos
             vbox:
                 spacing 10
                 xmaximum 200
@@ -163,16 +183,14 @@ label combat_menu:
 
 # AI Combat Options
 label ai:
-    $ i = renpy.random.randint(1, 3) #enemy ai (baby ah 123 random ai)
+    $ i = renpy.random.randint(1, 2) #enemy ai (baby ah 123 random ai)
+    $ target = turn_order[renpy.random.randint(0, 3)]
     if i == 2:
-        $ e = attack(p3, p1)
-        "The enemy makes an attack with [e] damage, reducing you to [p1.hp] health!"
-    elif i == 3:
-        $ e = attack(p3, p2)
-        "The enemy makes an attack with [e] damage, reducing companion's health to [p2.hp]!"
+        $ e = attack(current_fighter, target)
+        "[current_fighter.name] makes an attack with [e] damage, reducing [target.name] to [target.hp] health!"
     else:
-        $ defence(p3, 2)
-        "The enemy is shielding! [p3.defe] defence"
+        $ defence(current_fighter, 2)
+        "The enemy is shielding! [current_fighter.defe] defence"
     jump turn_cycle
 
 # check if combat should end

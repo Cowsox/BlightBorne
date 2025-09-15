@@ -67,7 +67,7 @@ init:
     # Necromancer
     image necro:
         "images/Necromancer/Nec_Pose1.png"
-        zoom 0.2
+        zoom 0.3
     image necro_battle:
         "images/Necromancer/Nec_Pose2.png"
         zoom 0.2
@@ -158,5 +158,5 @@ label particle_demo:
 label start:
     #show snow1 onlayer toplayer
     #show snow2 onlayer toplayer
-    jump particle_demo
+    #jump particle_demo
     jump camp_main

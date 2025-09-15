@@ -1,38 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/scripts/code/combat.rpy:153
-  File "game/scripts/code/combat.rpy", line 151, in script
-    show necro_battle:
-Exception: Expression '0.8' is not an ATL transform, and so cannot be included in an ATL interpolation.
+While running game code:
+  File "game/scripts/code/combat.rpy", line 189, in script
+    $ e = attack(current_fighter, target)
+  File "game/scripts/code/combat.rpy", line 189, in <module>
+    $ e = attack(current_fighter, target)
+  File "game/scripts/code/combat.rpy", line 42, in attack
+    damage = source.atk + 1 - target.defe * 0.5
+AttributeError: 'int' object has no attribute 'defe'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/code/combat.rpy", line 151, in script
-    show necro_battle:
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
-    renpy.config.show(name,
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 503, in show
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\scenelists.py", line 477, in add
-    thing.visit_all(lambda d : None)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\display\displayable.py", line 424, in visit_all
-    for d in self.visit():
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\atl.py", line 816, in visit
-    block = self.compile()
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\atl.py", line 723, in compile
-    block = self.atl.compile(self.context)
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\atl.py", line 925, in compile
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\atl.py", line 925, in <listcomp>
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "C:\Users\user\Downloads\RENPY\renpy-8.3.7-sdk\renpy\atl.py", line 1293, in compile
-    raise Exception("Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr)
-Exception: Expression '0.8' is not an ATL transform, and so cannot be included in an ATL interpolation.
+  File "game/scripts/code/combat.rpy", line 189, in script
+    $ e = attack(current_fighter, target)
+  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\admin\Downloads\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/code/combat.rpy", line 189, in <module>
+    $ e = attack(current_fighter, target)
+  File "game/scripts/code/combat.rpy", line 42, in attack
+    damage = source.atk + 1 - target.defe * 0.5
+AttributeError: 'int' object has no attribute 'defe'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Demo 1.0
-Wed Aug 27 18:30:35 2025
+Mon Sep  8 17:02:04 2025

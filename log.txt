@@ -1,4 +1,4 @@
-2025-09-22 06:12:27 UTC
+2025-09-22 06:13:28 UTC
 macOS-26.0-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
@@ -29,6 +29,88 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M2'
+Version: b'2.1 Metal - 90.5'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 841) drawable=(2880, 1682)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1440, 841) drawable=(2880, 1682)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 46.36s
+Loading error handling took 0.02s
+Loading script took 0.06s
+Loading save slot metadata took 0.01s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.32s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M2'
+Version: b'2.1 Metal - 90.5'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 841) drawable=(2880, 1682)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1440, 841) drawable=(2880, 1682)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 80.99s
+Loading error handling took 0.02s
+Loading script took 0.05s
+Loading save slot metadata took 0.01s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.32s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)

@@ -156,7 +156,4 @@ label particle_demo:
 
 # Required start point
 label start:
-    #show snow1 onlayer toplayer
-    #show snow2 onlayer toplayer
-    #jump particle_demo
-    jump camp_main
+    jump chapter_select

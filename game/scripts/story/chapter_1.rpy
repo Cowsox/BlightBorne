@@ -1,4 +1,4 @@
-label bb_letter:
+label c1_letter:
     "To my chosen champion,"
     "You are to venture to the northern garrison and discuss diplomatic relations with the deserters that reside there."
     "They call themselves 'The Order of the Broken Blade'." 
@@ -8,7 +8,7 @@ label bb_letter:
     "Alas, I have more pressing matters to attend to."
     "Signed, King Harridan II"
 
-label bb_diplomat:
+label c1_diplomat:
     "So, the king won't even bother to show up to this congregation. I'm not surprised."
 
     "Very well. You will have to do."

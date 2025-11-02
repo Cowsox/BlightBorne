@@ -22,12 +22,8 @@ label camp_main:
 label camp_move:
     menu:
         "It is dangerous to stay in one place too long, where should we go?"
-        "Farmstead (Corpse Flower)":
-            jump corpse_flower_1
-        "Small Town (Mother & Daughter)":
-            jump town_1
-        "Combat":
-            jump combat_start
+        "Look at the map":
+            jump map
         "Stay... For now.":
             jump camp_main
 

@@ -1,4 +1,15 @@
-*.save
-*.save
-*.save
-*.save
+# Compiled Ren'Py files
+*.rpyc
+*.rpyb
+*.rpymc
+
+# Ren'Py log files
+log.txt
+errors.txt
+traceback.txt
+lint.txt
+
+# Created directories
+saves/
+tmp/
+cache/

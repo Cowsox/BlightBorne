@@ -1,10 +1,9 @@
 label c2_intro:
-    scene home
+    scene evil_cave
 
     show palad at fade, left
-    pal "These caverns are where the Necromancer lurks. Remain vigilant."
+    pal "These caverns are where the Necromancer lurks.{p}Remain vigilant."
 
-    #show necro at fade, right
     nec "Vigilance will not save you..."
 
     pal "Show yourself, witch!"
@@ -14,8 +13,9 @@ label c2_intro:
     pal "I'm a paladin now."
 
     nec "I know who you are."
-    nec "You were a knight when you volenteered to execute me."
+    nec "You were a knight when you volenteered to {i}execute{/i} me."
 
+    show necro at fade, right
     "The Necromancer emerges from the shadows."
 
     nec "Now, you and your friend will tell me why you have come."
@@ -23,20 +23,20 @@ label c2_intro:
 
     menu:
         "I am the King's Champion. We only wish to speak with you.":
-            jump lable_name
+            jump c2_plague_nice
         "I am the King's Champion, and by order of the Crown, you will heed my word.":
-            jump lable_name
+            jump c2_plague_mean
 
 label c2_plague_nice:
     nec "A Champion?"
     nec "Coming to visit little old me?"
-    nec "This should be interesting..."
+    nec "{size=-10}This should be interesting...{/size}"
     nec "Very well, I shall listen."
     nec "For now..."
 
     "A devastating plague has besieged our kingdom."
     "We are aware of your affinity with the dark arts."
-    "If you have any knowledge on such a plague, we must know."
+    "If you have any knowledge on such a plague, we {b}must{/b} know."
 
     nec "Not any more than you would, Champion."
     nec "I have yet to uncover the mysteries of this... blight."
@@ -45,22 +45,22 @@ label c2_plague_nice:
     jump c2_request_nice
 
 label c2_plague_mean:
-    nec "I wil do what I please, 'Chamption'."
+    nec "I wil do what I please, 'Champion'."
     nec "Whatever it is you have to say, spare your breath."
     nec "I no longer serve this kingdom, nor do I have any intention to."
 
     "A devastating plague has besieged our kingdom."
     "Whatever it is you have done, you will reverse it at once!"
 
-    nec "What I have done?"
-    nec "You are mistaken"
+    nec "What {b}I{/b} have done?"
+    nec "You are mistaken."
     nec "Whatever this plague is, I have had no part in it."
 
     call c2_plague
     jump c2_request_mean
 
 label c2_plague:
-    pal "You lie!"
+    pal "{sc}You lie!{/sc}"
 
     nec "See for yourself..."
     "The Necromancer holds out a jar containing blighted flesh."
@@ -71,7 +71,7 @@ label c2_plague:
     nec "I... aquired it from some ill peasant."
     nec "Notice anything with your 'divine sense'?"
 
-    "The Paladin's eyes glow for a moment."
+    "The Paladin's {goldsweep}eyes glow{/goldsweep} for a moment."
     pal "I..."
     pal "Champion, the unholy aura coming from that jar is... different..."
     pal "Too different, at least, from that witch's energies."
@@ -80,7 +80,7 @@ label c2_plague:
 label c2_request_nice:
     "Very well..."
     "Necromancer, I humbly ask you to accompany us on this journey."
-    "Your expertise could be useful"
+    "Your expertise could be useful."
 
     nec "It has been quite a while since I've done some field research..."
     nec "Though I ask to recieve any artifacts we may encounter along the way."

@@ -17,7 +17,7 @@ label corpse_flower_1:
         "1. Very well, but we must remain vigilant.":
             jump corpse_flower_2b
         "2. I believe it is best we move on.":
-            jump camp_setup
+            jump chapter_select
 
 label corpse_flower_2b:
     scene corpse flower
@@ -79,7 +79,7 @@ label corpse_flower_3a:
 
     pal "We cannot afford to be doing these {shader=jitter:3,3}wild{/shader} experiments on everything we discover."
     pal "Do not push your {i}luck{/i}, [champion]."
-    jump camp_setup
+    jump chapter_select
 
 label corpse_flower_3b:
     scene corpse flower
@@ -92,7 +92,8 @@ label corpse_flower_3b:
 
     hide palad
     "The [paladin] leaves the room."
-    show necro reach at left
+    hide necro
+    show necro_battle at left
     "The [necromancer] holds out a hand. Necrotic energy begins pulsing towards the Corpse Flower."
 
     nec "Interesting reaction..."
@@ -106,8 +107,8 @@ label corpse_flower_3b:
 
     scene heart
     nec "Such {shader=jitter:3,3}volatile{/shader} power. It is {i}ours{/i} now."
-    nec "Apologies for the mess, [champion]. But it was worth the discomfort I assure you. (+1 Blight Seed)"
-    jump camp_setup
+    nec "Apologies for the mess, [champion]. But it was worth the discomfort I assure you. (+1 blight Seed)"
+    jump chapter_select
 
 label corpse_flower_3c:
     scene corpse flower
@@ -130,4 +131,4 @@ label corpse_flower_3c:
 
     pal "{b}Divine judgment.{/b}"
     pal "Our wounds will heal, just as this land now will."
-    jump camp_setup
+    jump chapter_select

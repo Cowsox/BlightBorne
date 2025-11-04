@@ -3,6 +3,7 @@
 # Characters
 define nec = Character("Necromancer", who_color="#663399", what_color="#d8bfd8")
 define pal = Character("Paladin", who_color="#daa520", what_color="#eee8aa")
+define dip = Character("Diplomat", who_color="#20da48", what_color="#eee8aa")
 define mom = Character("Mother", who_color="#6495ed", what_color="#87ceeb")
 define dau = Character("Daughter", who_color="#db7093", what_color="#ffe4e1")
 define me = Character("Champion")
@@ -34,6 +35,9 @@ default companions = 2
 # Initialise image settings
 init:
     # Backgrounds
+    image woods:
+        "woods.jpg"
+        zoom 1
     image campfire:
         "camp.png"
         yalign 0.0
@@ -53,6 +57,9 @@ init:
     image home:
         "home.png"
         zoom 0.6
+    image evil_cave:
+        "necromancer_cave.png"
+        zoom 0.45
     image heart:
         "heart hand.png"
         yalign 0.3
@@ -74,7 +81,11 @@ init:
     # Paladin
     image palad:
         "images/Paladin/Pal_Pose1.png"
-        zoom 0.2
+        zoom 0.3
+    # Diplomat
+    image diplo:
+        "images/Diplomat/Dip_Pose1.png"
+        zoom 0.3
     # Mother
     image mothe:
         "mother/mother mouth closed.png"

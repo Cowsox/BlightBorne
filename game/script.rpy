@@ -60,6 +60,9 @@ init:
     image evil_cave:
         "necromancer_cave.png"
         zoom 0.45
+    image bb:
+        "broken blade_interior.png"
+        zoom 0.45
     image heart:
         "heart hand.png"
         yalign 0.3

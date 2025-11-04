@@ -65,7 +65,7 @@ screen MapUI():
         ypos 344
         idle "c4_i"
         hover "c4_h"
-        action NullAction()
+        action Jump("c4_intro")
 
     imagebutton:
         xpos 810
@@ -82,6 +82,7 @@ screen MapUI():
         action NullAction()
 
 label chapter_select:
+    scene home
     show image "images/backgrounds/simple background.jpg":
         zoom 1
     menu:
@@ -89,6 +90,8 @@ label chapter_select:
             jump camp_setup
         "Map":
             jump map
+        "Particle Demo":
+            jump particle_demo
 
 label map:
     call screen MapUI

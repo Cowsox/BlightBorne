@@ -3,7 +3,12 @@
 # Characters
 define nec = Character("Necromancer", who_color="#663399", what_color="#d8bfd8")
 define pal = Character("Paladin", who_color="#daa520", what_color="#eee8aa")
-define dip = Character("Diplomat", who_color="#20da48", what_color="#eee8aa")
+define oat = Character("Oathbreaker", who_color="#352b38", what_color="#81757c")
+define oat_hide = Character("??????", who_color="#352b38", what_color="#81757c")
+define ban = Character("Bandit", who_color="#856f46", what_color="#999389")
+define gro = Character("Grotolgus", who_color="#009e08", what_color="#3f724c")
+define dip = Character("Diplomat", who_color="#20da48", what_color="#b2eeaa")
+define mag = Character("Magistrate", who_color="#8c5d9a", what_color="#957b9c")
 define mom = Character("Mother", who_color="#6495ed", what_color="#87ceeb")
 define dau = Character("Daughter", who_color="#db7093", what_color="#ffe4e1")
 define me = Character("Champion")
@@ -63,6 +68,18 @@ init:
     image bb:
         "broken blade_interior.png"
         zoom 0.45
+    image ci:
+        "crown_interior.png"
+        zoom 0.45
+    image c4_combat:
+        "battle_farm.png"
+        zoom 0.45
+    image c6_outside_combat:
+        "battle_burning town.png"
+        zoom 0.45
+    image c6_inside_combat:
+        "Battle_castel_interior.png"
+        zoom 0.45
     image heart:
         "heart hand.png"
         yalign 0.3
@@ -74,6 +91,9 @@ init:
     image arm:
         "mother/infected arm.png"
         zoom 0.5
+
+
+
     # Necromancer
     image necro:
         "images/Necromancer/Nec_Pose1.png"
@@ -88,6 +108,22 @@ init:
     # Diplomat
     image diplo:
         "images/Diplomat/Dip_Pose1.png"
+        zoom 0.3
+    # Magistrate
+    image magis:
+        "images/Magistrate/Magistrate.png"
+        zoom 0.3
+    # Oathbreaker
+    image oathe:
+        "images/Oath Breaker/Oat_Pose1.png"
+        zoom 0.3
+    # Bandit
+    image bandi:
+        "images/Bandit/Bandit.png"
+        zoom 0.3
+    # Grot
+    image groto:
+        "images/Grotolgus/Grotolgus.png"
         zoom 0.3
     # Mother
     image mothe:

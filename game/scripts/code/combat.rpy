@@ -31,7 +31,7 @@ init python:
     e3 = fighter("Plague Knight",   "sick girl.png", 10, 10, 2, 0, 0, False, False)
     e4 = fighter("Oathbreaker",     "sick girl.png", 10, 10, 2, 0, 0, False, False)
 
-    turn_order = [p1, p2, p3, e1, e2]
+    turn_order = [p1, p2, p3, e2, e2, e2]
     turn_num = 0
     current_fighter = p1
 
@@ -152,6 +152,7 @@ label turn:
 
 label turn_cycle:
     # rotate through the turn_order
+    call win_check
     if turn_num == len(turn_order) - 1:
         $ turn_num = 0
     else:
@@ -197,13 +198,14 @@ label ai:
 label win_check:
     if p1.hp <= 0:
         jump lose
-    if p3.hp <= 0:
+    if e2.hp <= 0:
         jump win
     return
 
 # Win and Loss conditions
 label win:
-    "You look around..."
-    "No more monsters around, you're safe"
+    "You win the battle."
+    hide screen hp_bar
+    jump c4_aftermath
 label lose:
     "You Died"

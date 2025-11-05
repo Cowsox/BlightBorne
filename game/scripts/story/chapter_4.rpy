@@ -69,19 +69,23 @@ label c4_coward:
 
 label c4_avoid:
     ban "Well I'm afraid you asked for trouble the moment you came walking into our turf!"
-    jump c4_aftermath
+    jump combat_start
 
 label c4_attack:
     ban "I'll gut you like a fish!"
-    jump c4_aftermath
+    jump combat_start
 
 label c4_aftermath:
+    scene woods
+    show bandi at fade, center
     ban "Okay okay, we yield! We yield!"
     ban "Please- take whatever you want..."
     ban "...just d-don't kill us!"
 
+    show necro at fade, left
     nec "Why shouldn't we? Nobody will miss these lowlives."
 
+    show palad at fade, right
     pal "Because they are yet to have a fair trial."
     pal "They must answer to the law."
     pal "Their execution is not our choice to make."

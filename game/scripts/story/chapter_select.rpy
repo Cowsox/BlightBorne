@@ -79,7 +79,7 @@ screen MapUI():
         ypos 528
         idle "c6_i"
         hover "c6_h"
-        action NullAction()
+        action Jump("c6_intro")
 
 label chapter_select:
     scene home

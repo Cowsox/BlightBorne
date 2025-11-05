@@ -4,7 +4,7 @@
 define inline_tooltip_list = [
     inline_tooltip_data("elf", [_("Elf"), _("Elves"), _("Elvhen"), ("elves")], _("The Elves"), _("The Elves are a pointy eared people with a lot of rizz.")),
     inline_tooltip_data("dwarf", [_("Dwarf"), _("Dwarves"), _("Dwarven")], _("The Dwarves"), _("The Dwarves are a subteranean society of cool guys.")),
-    inline_tooltip_data("blight", [_("Blight"), _("blight")], _("The Blight"), _("A mysterious and deadly disease that has spread throughout the kingdom.")),
+    inline_tooltip_data("blight", [_("Blight")], _("The Blight"), _("A mysterious and deadly disease that has spread throughout the kingdom.")),
 ]
 
 # Edit this style to change how the text you hover over appears

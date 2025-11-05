@@ -284,6 +284,37 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
+# Particles
+image dust1:
+    "particles/9.png"
+    alpha renpy.random.uniform(1, 0.1)
+    zoom .1
+image dust2:
+    "particles/9.png"
+    alpha renpy.random.uniform(1, 0.1)
+    zoom .05
+image fog1:
+    "particles/50.png"
+    anchor (0.5, 0.5)
+    zoom 1
+
+# Transforms
+transform shrink:
+    zoom 1
+    linear renpy.random.uniform(5, 20) zoom .01
+
+transform colorizeBlight:
+    matrixcolor TintMatrix("#b86800")
+    linear renpy.random.uniform(0.1, 1) matrixcolor TintMatrix("#e6aa5c")
+    linear 1 matrixcolor TintMatrix("#b86800")
+    repeat
+
+# Final SnowBlossom
+image dust_fall_1 = SnowBlossom("dust1", count=50, border=20, xspeed=(-10, 10), yspeed=(10, 100), start=50, fast=False)
+image dust_fall_2 = SnowBlossom("dust2", count=50, border=20, xspeed=(-10, 10), yspeed=(10, 100), start=50, fast=False)
+image dust_rise_1 = SnowBlossom(At("dust1", shrink), count=50, border=20, xspeed=(-10, 10), yspeed=(-10, -100), start=50, fast=False)
+image dust_rise_2 = SnowBlossom(At("dust2", shrink), count=50, border=20, xspeed=(-10, 10), yspeed=(-10, -100), start=50, fast=False)
+
 screen navigation():
 
     vbox:
@@ -352,11 +383,23 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    # background
+    add "gui/main_menu.png"
 
-    ## This empty frame darkens the main menu.
+    # 🔥 Ember Particles (rise from bottom)
+    add "ember_rise_1"
+    add "ember_rise_2"
+
+        ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"
+
+    # === Title Logo ===
+    add "gui/title_logo.png":
+        xpos 0.03  # horizontal position (0.0 = left edge)
+        ypos 0.05  # vertical position (0.0 = top edge)
+        zoom 1.5   # adjust if the logo is too big/small
+        alpha 1.0  # transparency, 1.0 = fully visible
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.

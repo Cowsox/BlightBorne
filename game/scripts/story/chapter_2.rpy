@@ -13,7 +13,7 @@ label c2_intro:
     pal "I'm a paladin now."
 
     nec "I know who you are."
-    nec "You were a knight when you volenteered to {i}execute{/i} me."
+    nec "You were a knight when you volunteered to {i}execute{/i} me."
 
     show necro at fade, right
     "The Necromancer emerges from the shadows."

@@ -6,10 +6,10 @@ label c6_intro:
     mag "Finally, my request is heeded."
     mag "Well met, Champions of the Crown."
     mag "There has been a rapid influx of sick individuals present in Oakshire."
-    mag "Our healers are insufficent to help this many people, which is why we need the Capital to-"
+    mag "Our healers are insufficient to help this many people, which is why we need the Capital to-"
 
     show palad at fade, right
-    pal "The Capital is besiged."
+    pal "The Capital is besieged."
 
     mag "-What?"
 
@@ -17,7 +17,7 @@ label c6_intro:
     pal "Do you know of anything regarding what's happening in the Capital?"
     pal "Any information is better than charging in blindly."
 
-    mag "Only that the sickly have fleed from it."
+    mag "Only that the sickly have fled from it."
     mag "They spoke of these... monsters..."
     mag "But I had assumed it was just some sort of mass hysteria."
 
@@ -28,7 +28,7 @@ label c6_intro:
     oat_hide "These monsters are {i}real{/i}"
 
     "You turn around to see a knight clad in dark armour."
-    "Skulls adorne arcross their chestplate as their crimson red eyes gaze down upon you."
+    "Skulls adorn arcross their chestplate as their crimson red eyes gaze down upon you."
 
     "The Paladin draws his sword."
 
@@ -37,8 +37,8 @@ label c6_intro:
     "The Paladin swings his blade towards the unknown knight."
     "You watch as it glides vigourously through the air."
     "..."
-    "...Abruptly, the blade stops?"
-    "The dark gauntlet of the knight holds it in place."
+    "...Abruptly, the blade stops."
+    "With the dark gauntlet of the knight holding it in place."
 
     oat_hide "Your {i}faith{/i} blinds you."
     oat_hide "I do not seek destruction."
@@ -76,7 +76,7 @@ label c6_heed:
     oat "I once swore myself to the Light." # What is the Light?
     oat "To defend the kingdom with courage and honour."
     oat "But when this blight was unleashed, these was little I wcould do."
-    oat "The radient powers of the Light were not enough."
+    oat "The radiant powers of the Light were not enough."
     oat "I needed more..."
     oat "...More strength, more power."
     oat "So I let the Blight corrupt me..."
@@ -106,7 +106,7 @@ label c6_heed:
 
     "You start to hear distant marches, followed by screams."
 
-    mag "Asemble the guards!"
+    mag "Assemble the guards!"
     mag "Evacuate the civilians!"
     mag "Champions, aid us in this battle!"
 
@@ -115,7 +115,7 @@ label c6_heed:
 
 label c6_outside:
     scene c6_outside_combat
-    "Upon leaving the town hall, the woosh of the wind grows louder as the great boulder crashes into the town hall."
+    "Upon leaving the town hall, the woosh of the wind grows louder as a great boulder crashes into the town hall."
     "You look around and see fires ablaze, buildings collapsing."
     "People are running from mutated knights clad in rusting armour."
     "At the centre of it all, a grotesque amalgamation of flesh and metal roars."

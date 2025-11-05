@@ -11,8 +11,10 @@ label c4_intro:
 label c4_stop:
     "You signal to your companions to stop."
 
+    show necro at fade, left
     nec "What now?"
 
+    show palad at fade, right
     pal "I heard it too, something in the bushes..."
 
     nec "You're both just being paranoid, we must keep moving."
@@ -40,9 +42,10 @@ label c4_continue:
     jump c4_choice
 
 label c4_choice:
-    "What is it we have here hmmm?"
-    "Those who carry the mark of the Crown?"
-    "Must be pretty important huh?"
+    show bandi at fade, center
+    ban "What is it we have here hmmm?"
+    ban "Those who carry the mark of the Crown?"
+    ban "Must be pretty important huh?"
     menu:
         "Leave at once, before I show you just how important I am. <Draw Blade>":
             jump c4_coward
@@ -52,9 +55,10 @@ label c4_choice:
             jump c4_attack
 
 label c4_coward:
-    "O-okay, we'll uh..."
-    "...we'll let you pass this time..."
+    ban "O-okay, we'll uh..."
+    ban "...we'll let you pass this time..."
 
+    hide bandi
     "The bandits flee."
 
     nec "We should've showed those insolet fools we are not to be trifled with."
@@ -64,17 +68,17 @@ label c4_coward:
     jump chapter_select
 
 label c4_avoid:
-    "Well I'm afraid you asked for trouble the moment you came walking into our turf!"
+    ban "Well I'm afraid you asked for trouble the moment you came walking into our turf!"
     jump c4_aftermath
 
 label c4_attack:
-    "I'll gut you like a fish!"
+    ban "I'll gut you like a fish!"
     jump c4_aftermath
 
 label c4_aftermath:
-    "Okay okay, we yield! We yield!"
-    "Please- take whatever you want..."
-    "...just d-don't kill us!"
+    ban "Okay okay, we yield! We yield!"
+    ban "Please- take whatever you want..."
+    ban "...just d-don't kill us!"
 
     nec "Why shouldn't we? Nobody will miss these lowlives."
 
@@ -94,6 +98,7 @@ label c4_execute:
     "You rest your blade upon the bandit's neck."
     "Before he could begin to beg for his life,"
     "...you slit his throat."
+    hide banti
     "Instantly he falls, gargling in a pool of his own blood."
 
     "The Necromancer then blasts the other two bandits with a wave of dark energy."
@@ -107,6 +112,7 @@ label c4_execute:
     jump chapter_select
 
 label c4_spare:
+    hide bandi
     "You stow your blade, allowing for the bandits to limp their way back into the forest."
 
     nec "Shame. I could have used a few extra skulls to decorate my cave with..."

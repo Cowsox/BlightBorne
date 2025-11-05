@@ -75,7 +75,7 @@ init:
         "battle_farm.png"
         zoom 0.45
     image c6_outside_combat:
-        "battle_burning town.png"
+        "bruning_village.png"
         zoom 0.45
     image c6_inside_combat:
         "Battle_castel_interior.png"

@@ -134,7 +134,7 @@ screen targeting:
 label combat_start:
     # setup GUI and Background
     show screen hp_bar(0.0)
-    show image "images/backgrounds/simple background.jpg":
+    show image "images/battle_farm.png":
         zoom 1
     jump turn
 
